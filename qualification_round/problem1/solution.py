@@ -1,10 +1,12 @@
 import time
 
+import psutil
+
 
 def main():
     t = int(input())
 
-    for x in range(1, t+1):
+    for x in range(1, t + 1):
         n = int(input())
 
         k = 0
@@ -31,7 +33,10 @@ def main():
 
 
 if __name__ == '__main__':
+    start_mem = psutil.virtual_memory().available
     start_time = time.time()
     main()
     end_time = time.time()
-    print('-- {0} seconds --'.format(end_time-start_time))
+    end_mem = psutil.virtual_memory().available
+    print('-- {0} seconds --'.format(end_time - start_time))
+    print('-- {0} bytes --'.format(end_mem - start_mem))
