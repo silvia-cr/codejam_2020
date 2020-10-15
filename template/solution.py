@@ -8,7 +8,7 @@ def main():
 
     for x in range(1, t + 1):
         n = int(input())
-        
+
         print('Case #{0}: {1}'.format(x, n))
 
 
